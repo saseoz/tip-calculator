@@ -1,0 +1,221 @@
+:root {
+    --Strongcyan: hsl(172, 67%, 45%);
+
+    --cyan600: hsl(183, 100%, 15%);
+    --cyan500: hsl(186, 14%, 43%);
+    --cyan400: hsl(184, 14%, 56%);
+    --cyan300: hsl(185, 41%, 84%);
+    --cyan200: hsl(189, 41%, 97%);
+    --cyan100: hsl(0, 0%, 100%);
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: "Space Mono", monospace;
+    background-color: var(--cyan300);
+    display: grid;
+    min-height: 100vh;
+    font-weight: 700;
+}
+button, input {
+    font: inherit;
+    border: none;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    max-width: 500px;
+    transition: .3s ease-in;
+    margin: 0 auto;
+}
+.title {
+    text-align: center;
+    letter-spacing: 8px;
+    color: hsl(182, 23%, 30%);
+    margin: 2rem; 
+}
+.main-card {
+    padding: 2rem;
+    background-color: var(--cyan100);
+    height: 100%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.main-card > * {
+    width: 100%;
+}
+/* form */
+form > * {
+    margin-bottom: 2rem;
+}
+label, legend {
+    color: var(--cyan500);
+}
+legend {
+    margin-bottom: 1rem;
+}
+/* inputs setting */
+input, button {
+    outline: none;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+input {
+    font-size: 1.5rem;
+}
+input {
+    width: 100%;
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+input::placeholder {
+    color: var(--cyan400);
+}
+#bill, #people, #customTip  {
+    background-color: var(--cyan200);
+    color: var(--cyan600);
+    padding-inline: 1rem;
+    border: 2px solid transparent;
+}
+#bill:focus, #people:focus, #customTip:focus  {
+    border: 2px solid var(--Strongcyan);
+}
+#bill, #people { 
+    text-align: right;
+    border-radius: .3rem;
+    padding-block: .3rem;
+}
+.input-wrap {
+    position: relative;
+    width: 100%;
+}
+.input-wrap div {
+    position: absolute;
+    left: 10px;
+}
+.err {
+    color: red;
+}
+.label-error-wrap {
+    margin-bottom: .5rem;
+}
+/* tip group */
+.tip-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.tip-inputs > * {
+    width: 100%;
+    color: var(--cyan100);
+    background-color: var(--cyan600);
+    text-align: center;
+    border-radius: .3rem;
+    padding: .4rem;
+}
+.tip-inputs input:focus {
+    background: var(--Strongcyan) ;
+}
+.tip-inputs input:hover {
+    background: hsl(173, 60%, 76%);
+}
+#customTip  {
+    text-align: right;
+    color: var(--cyan600);
+}
+#customTip::placeholder  {
+    color: var(--cyan500);
+}
+/* result */
+.result {
+    background-color: var(--cyan600);
+    width: 100%;
+    border-radius: 1rem;
+    color: var(--cyan100);
+    padding: 1.5rem;
+}
+.result-wrap > * {
+    margin-bottom: 2rem;
+}
+.result-wrap {
+    margin-bottom: 2rem;
+}
+.result span {
+    color: var(--cyan400);
+    font-size: .8125rem;
+}
+.result h2 {
+    color: var(--Strongcyan);
+    font-size: 1.7rem;
+}
+.result button {
+    width: 100%;
+    padding: .7rem;
+    text-transform: uppercase;
+    color: var(--cyan600);
+    background-color: hsl(183, 68%, 25%);
+    border-radius: .3rem;
+}
+.result button:hover, .result button:focus  {
+    background-color: hsl(173, 60%, 76%);
+}
+@media (min-width: 490px) {
+    .container {
+        margin-bottom: 3rem;
+    }
+}
+@media (min-width: 780px) {
+    body {
+        padding: 2rem;
+        place-items: center;
+    }
+    .container {
+        margin-bottom: unset;
+        max-width: 921px;
+        height: unset;
+        overflow: unset;
+    }
+    .title {
+        margin: unset;
+        margin-bottom: 4.7rem; 
+        font-size: 1.7rem;
+    }
+    .main-card {
+        height: unset;
+        flex-direction: row;
+        height: unset;
+    }
+    /* form */
+    form {
+        margin-right: 3rem;
+    }
+    .tip-inputs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #customTip::placeholder {
+        font-size: 1.2rem;
+    }
+    /* result */
+    .result {
+        height: 418px;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .result h2 {
+        font-size: 3rem;
+    }
+}
